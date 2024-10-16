@@ -25,10 +25,10 @@ jobs:
       run: npm install
 
     - name: Check Node.js version
-      run: node -v  # This will log the Node.js version to the console
+      run: node -v 
 
     - name: Check installed dependencies
-      run: npm ls  # This will print all installed packages and their versions
+      run: npm ls  
 
     - name: Run Jest tests
       run: npm test
