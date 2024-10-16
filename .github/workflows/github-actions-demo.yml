@@ -13,20 +13,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout the code from the repository
     - name: Checkout code
       uses: actions/checkout@v2
 
-    # Set up Node.js with a specific version
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '14' # Or your project's node version
+        node-version: '14'
 
-    # Install dependencies
     - name: Install dependencies
       run: npm install
 
-    # Run tests
+    - name: Check Node.js version
+      run: node -v  # This will log the Node.js version to the console
+
+    - name: Check installed dependencies
+      run: npm ls  # This will print all installed packages and their versions
+
     - name: Run Jest tests
       run: npm test
