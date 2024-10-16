@@ -19,16 +19,13 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '16'
 
     - name: Install dependencies
       run: npm install
 
-    - name: Check Node.js version
-      run: node -v 
-
-    - name: Check installed dependencies
-      run: npm ls  
-
     - name: Run Jest tests
-      run: npm test
+      run: npm test -- --verbose
+
+    - name: Set file permissions (optional)
+      run: chmod -R 755 .
